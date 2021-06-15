@@ -52,8 +52,6 @@ module AliyunDypns
         opts: { method: "POST" },
       )
       response.dig("GetMobileResultDTO", "Mobile")
-    rescue StandardError => e
-      { Code: "BadRequest", Message: "Request failed: #<#{e.class}: #{e.message}>" }
     end
 
     # {
@@ -79,8 +77,6 @@ module AliyunDypns
       )
 
       response.dig("GateVerifyResultDTO", "VerifyResult")
-    rescue StandardError => e
-      { Code: "BadRequest", Message: "Request failed: #<#{e.class}: #{e.message}>" }
     end
 
     def client
